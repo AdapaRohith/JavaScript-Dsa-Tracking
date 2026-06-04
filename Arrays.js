@@ -1,0 +1,72 @@
+let fruits = ['Apple',{name:'john'},true,function(){alert("hello")}];
+console.log((fruits[1].name));
+
+//pop: Extracts the Last Element of the Array and returns it
+
+let names = ["Rohith","Sushanth","Prem","Chandana"];
+
+console.log(names.pop());
+console.log(names);
+names.push('chota Packet');//push : Appends the element to the end of the array
+console.log(names);
+names.shift();//shit: Extracts the first element of the array and returns it
+console.log(names);
+
+names.push('omkar','chary');
+names.unshift('Rohith','shivank');
+console.log(names);
+
+
+//Arrays
+//finding the maximum value
+
+// function MaximumValue(arr){
+//     if(arr === 0) return null;
+
+//     let max = arr[0];
+
+//     for(let i=0 ; i < arr.length;i++){
+//         if(arr[i]>max){
+//             max = arr[i];
+//         }
+//     }
+//     return max;
+// }
+// const scores = [10,2,54,65,13,24,92];
+// console.log(MaximumValue(scores));
+
+//finding the least value 
+
+// function MinimumValue(arr){
+//     if(arr === 0) return null;
+
+//     let min = arr[0];
+//     for(let i=0;i<arr.length;i++){
+//         if(arr[i]<min){
+//             min = arr[i];
+//         }
+//     }
+//     return min;
+// }
+
+// const scores = [10,2,54,65,13,24,92];
+// console.log(MinimumValue(scores));
+
+//DUPLICATE ARRAy
+
+function DuplicateArray(arr){
+    for(let i=0;i<arr.length;i++){
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[i]===arr[j]){
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+const scores = [10,1,2,4,2,4,2,55,];
+console.log(DuplicateArray(scores));
+
+const age = [1,2,3,4,5,6,7];
+console.log(DuplicateArray(age));
