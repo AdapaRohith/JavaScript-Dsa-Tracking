@@ -74,32 +74,47 @@ console.log(names);
 
 // Three distinct maximum numbers in array
 
-var Distinctarray = function(nums){
-    let firstMax = null;
-    let secondMax = null;
-    let thirdMax = null;
+// var Distinctarray = function(nums){
+//     let firstMax = null;
+//     let secondMax = null;
+//     let thirdMax = null;
 
-    for(let i=0;i<nums.length;i++){
-        let current = nums[i];
+//     for(let i=0;i<nums.length;i++){
+//         let current = nums[i];
 
-        if(current === firstMax || current === secondMax || current === thirdMax){
-            continue;
-        };
-        if(firstMax === null || current > firstMax){
-            thirdMax = secondMax;
-            secondMax = firstMax;
-            firstMax = current;
-        }
-        else if(secondMax === null || current > secondMax){
-            thirdMax = secondMax;
-            secondMax = current;
-        }
-        else if(thirdMax === null || current > thirdMax){
-            thirdMax = current;
+//         if(current === firstMax || current === secondMax || current === thirdMax){
+//             continue;
+//         };
+//         if(firstMax === null || current > firstMax){
+//             thirdMax = secondMax;
+//             secondMax = firstMax;
+//             firstMax = current;
+//         }
+//         else if(secondMax === null || current > secondMax){
+//             thirdMax = secondMax;
+//             secondMax = current;
+//         }
+//         else if(thirdMax === null || current > thirdMax){
+//             thirdMax = current;
+//         }
+//     }
+//     return thirdMax !== null ? thirdMax : firstMax;
+
+// }
+// const scores = [1,2,3,4];
+// console.log(Distinctarray(scores));
+
+//TWO POINTER CODE
+
+function compressor(arr){
+    let write = 0;
+    for(read = 0;read<arr.length;read++){
+        if(arr[read]==="ERROR"){
+           [arr[write],arr[read]]=[arr[read],arr[write]];
+           write ++;
         }
     }
-    return thirdMax !== null ? thirdMax : firstMax;
-
+    return arr;
 }
-const scores = [1,2,3,4];
-console.log(Distinctarray(scores));
+const data = ["ERROR","DATA","DATA","ERROR","ERROR","ERROR","DATA"];
+console.log(compressor(data));
